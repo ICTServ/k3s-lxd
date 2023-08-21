@@ -43,6 +43,7 @@ $ ./setup.sh
 ```
 
 ```
+```
 curl -sLS https://raw.githubusercontent.com/ICTServ/setup/main/k3s-lxd/setup.sh | sh
 ```
 ```
