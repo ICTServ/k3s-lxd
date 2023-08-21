@@ -23,12 +23,7 @@ lxc init images:ubuntu/mantic/amd64 --profile $profile $container_name
 lxc config device add "${container_name}" "kmsg" unix-char source="/dev/kmsg" path="/dev/kmsg"
 
 cat > install_k3s.sh << EOF
-apt update && apt install openssh-client openssh-server curl -y
-echo "PermitRootLogin yes
-PubkeyAuthentication yes" > /etc/ssh/sshd_config
-systemctl enable sshd && systemctl restart sshd
-ssh-keygen -t rsa -b 4096
-chmod 600 .ssh/authorized_keys
+apt update && apt install curl openssh-server -y && systemctl enable --now ssh
 curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.24.16 K3S_URL=https://$K3S_MASTER_IP:6443 K3S_TOKEN=$K3S_TOKEN_VALUE sh -
 sleep 20
 EOF
