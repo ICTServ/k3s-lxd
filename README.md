@@ -44,13 +44,13 @@ $ ./setup.sh
 
 ```
 ```
-curl -sLS https://raw.githubusercontent.com/ICTServ/setup/main/k3s-lxd/setup.sh | sh
+curl -sLS https://raw.githubusercontent.com/ICTServ/k3s-lxd/main/setup.sh | sh
 ```
 ```
-curl -sLS https://raw.githubusercontent.com/ICTServ/setup/main/k3s-lxd/deploy_master.sh | sh
+curl -sLS https://raw.githubusercontent.com/ICTServ/k3s-lxd/main/deploy_master.sh | sh
 ```
 ```
-curl -sLS https://raw.githubusercontent.com/ICTServ/setup/main/k3s-lxd/deploy_agent.sh | sh
+curl -sLS https://raw.githubusercontent.com/ICTServ/k3s-lxd/main/deploy_agent.sh | sh
 ```
 ```
 
