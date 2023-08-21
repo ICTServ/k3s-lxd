@@ -11,7 +11,7 @@ K3S on LXD
 Get the sources:
 
 ```
-git clone https://github.com/ICTServ/k3s-lxd.git && cd k3s-on-lxd
+git clone https://github.com/ICTServ/k3s-lxd.git && cd k3s-lxd
 ```
 ```
 chmod +x *.sh
