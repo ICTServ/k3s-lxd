@@ -2,12 +2,12 @@
 
 command -v lxd &> /dev/null && EXIT_CODE=${?} || EXIT_CODE=${?}
 
-# if [ ${EXIT_CODE} == 1 ] 
-#   then
-#     echo "LXD is not installed"
-#     echo "go to: https://linuxcontainers.org/lxd/getting-started-cli/"
-#     exit 1;
-# fi
+if [ ${EXIT_CODE} == 1 ] 
+  then
+    echo "LXD is not installed"
+    echo "go to: https://linuxcontainers.org/lxd/getting-started-cli/"
+    exit 1;
+fi
 
 LXC_PROFILE="k3s"
 LXC_CONTAINER_MEMORY="8GB"
@@ -21,7 +21,7 @@ lxc profile copy default ${LXC_PROFILE}
 lxc profile set ${LXC_PROFILE} security.privileged true
 lxc profile set ${LXC_PROFILE} security.nesting true
 lxc profile set ${LXC_PROFILE} limits.memory.swap false
-lxc profile set ${LXC_PROFILE} limits.memory ${LXC_CONTAINER_MEMORY:-2GB}
+lxc profile set ${LXC_PROFILE} limits.memory ${LXC_CONTAINER_MEMORY:-8GB}
 lxc profile set ${LXC_PROFILE} limits.cpu ${LXC_CONTAINER_CPU:-2}
 lxc profile set ${LXC_PROFILE} linux.kernel_modules overlay,nf_nat,ip_tables,ip6_tables,netlink_diag,br_netfilter,xt_conntrack,nf_conntrack,ip_vs,vxlan
 
