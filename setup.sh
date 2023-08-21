@@ -21,7 +21,7 @@ lxc profile copy default ${LXC_PROFILE}
 lxc profile set ${LXC_PROFILE} security.privileged true
 lxc profile set ${LXC_PROFILE} security.nesting true
 lxc profile set ${LXC_PROFILE} limits.memory.swap false
-lxc profile set ${LXC_PROFILE} limits.memory ${LXC_CONTAINER_MEMORY:-2GB}
+lxc profile set ${LXC_PROFILE} limits.memory ${LXC_CONTAINER_MEMORY:-8GB}
 lxc profile set ${LXC_PROFILE} limits.cpu ${LXC_CONTAINER_CPU:-2}
 lxc profile set ${LXC_PROFILE} linux.kernel_modules overlay,nf_nat,ip_tables,ip6_tables,netlink_diag,br_netfilter,xt_conntrack,nf_conntrack,ip_vs,vxlan
 
