@@ -23,8 +23,8 @@ lxc init images:ubuntu/jammy/amd64 --profile $profile $container_name
 lxc config device add "${container_name}" "kmsg" unix-char source="/dev/kmsg" path="/dev/kmsg"
 
 cat > install_k3s.sh << EOF
-apt update && apt install curl openssh-server -y && systemctl enable --now ssh
-curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.24.16 K3S_URL=https://$K3S_MASTER_IP:6443 sh -
+apt update && apt install openssl curl -y
+curl -sfL https://get.k3s.io | K3S_URL=https://$K3S_MASTER_IP:6443 K3S_TOKEN=$K3S_TOKEN_VALUE sh -
 sleep 20
 EOF
 
