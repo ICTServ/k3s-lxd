@@ -17,7 +17,7 @@ git clone https://github.com/ICTServ/k3s-lxd.git && cd k3s-lxd && chmod +x *.sh
 ./setup.sh
 ```
 ```
-./deploy_master.sh k3s-master-1
+./deploy_master.sh k3s-master
 ```
 ```
 cd && export KUBECONFIG=/home/user/kubeconfig
