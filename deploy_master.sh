@@ -10,7 +10,7 @@ fi
 # Profile created in setup.sh
 profile=k3s
 
-lxc init images:ubuntu/jammy/amd64 --profile $profile $container_name
+lxc init images:ubuntu/mantic/amd64 --profile $profile $container_name
 lxc config device add "${container_name}" "kmsg" unix-char source="/dev/kmsg" path="/dev/kmsg"
 
 cat > install_k3s.sh << EOF
